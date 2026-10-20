@@ -107,14 +107,12 @@ console.log(obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes));
 
 
 const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
-  let activarProctolo = false;
-
     for(let i = 0; i < pacientes.length; i++){
       if(pacientes[i].frecuenciaCardiaca > 100 && pacientes[i].temperatura > 39){
-        activarProctolo = true;
+        return true;
       }
     }
-    return activarProctolo;
+    return false;
 };
 console.log(activarProtocoloUrgencia(pacientes));
 
@@ -133,14 +131,13 @@ console.log(reasignaPacientesAMedicoFamilia(pacientes));
 
 
 const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
-  let pediatraACasa = false;
 
   for(let i = 0; i < pacientes.length; i++){
     if(pacientes[i].especialidad === "Pediatra"){
-      pediatraACasa = true
+      return true
     }  
   }
-  return pediatraACasa;
+  return false;
 };
 console.log(HayPacientesDePediatria(pacientes));
 
